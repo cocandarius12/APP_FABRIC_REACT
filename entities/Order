@@ -1,0 +1,226 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "order_number": {
+      "type": "string",
+      "description": "Num\u0103r comand\u0103 unic"
+    },
+    "aiConversation": {
+      "type": "array",
+      "description": "Chat conversation history with AI",
+      "items": {
+        "type": "object"
+      }
+    },
+    "orderState": {
+      "type": "object",
+      "description": "Persistent order state from chat"
+    },
+    "lockedForEdit": {
+      "type": "boolean",
+      "default": false,
+      "description": "Lock flag to prevent concurrent edits"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "client_email": {
+      "type": "string"
+    },
+    "client_phone": {
+      "type": "string"
+    },
+    "client_company": {
+      "type": "string"
+    },
+    "order_items": {
+      "type": "array",
+      "description": "Lista de produse \u00een comand\u0103",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "sizes_breakdown": {
+            "type": "object"
+          },
+          "unit_price": {
+            "type": "number"
+          },
+          "personalization_cost_per_unit": {
+            "type": "number"
+          },
+          "base_product_cost": {
+            "type": "number"
+          },
+          "setup_fee": {
+            "type": "number"
+          },
+          "total_price": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "template_id": {
+      "type": "string",
+      "description": "ID template produs (legacy)"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "color": {
+      "type": "string"
+    },
+    "sizes_breakdown": {
+      "type": "object",
+      "description": "Distribu\u021bie m\u0103rimi: {S: 10, M: 20, L: 15}"
+    },
+    "personalization_type": {
+      "type": "string",
+      "enum": [
+        "print_dtg",
+        "print_screen",
+        "broderie",
+        "sublimation",
+        "patch",
+        "vinyl",
+        "none",
+        "DTG",
+        "SERIGRAFIE",
+        "BRODERIE",
+        "SUBLIMARE",
+        "VINIL"
+      ]
+    },
+    "personalization_zone": {
+      "type": "string"
+    },
+    "personalization_size": {
+      "type": "string",
+      "enum": [
+        "small",
+        "medium",
+        "large",
+        "xlarge"
+      ]
+    },
+    "personalization_positions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Pozi\u021bii: fata, spate, maneca_stanga, maneca_dreapta"
+    },
+    "num_colors": {
+      "type": "number",
+      "description": "Num\u0103r culori \u00een design"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "URL fi\u0219ier logo"
+    },
+    "special_instructions": {
+      "type": "string"
+    },
+    "unit_price": {
+      "type": "number"
+    },
+    "setup_fee": {
+      "type": "number"
+    },
+    "personalization_cost_per_unit": {
+      "type": "number"
+    },
+    "base_product_cost": {
+      "type": "number"
+    },
+    "total_price": {
+      "type": "number"
+    },
+    "estimated_lead_time_days": {
+      "type": "number"
+    },
+    "estimated_delivery_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "atelier_id": {
+      "type": "string"
+    },
+    "atelier_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "offer_sent",
+        "accepted",
+        "in_production",
+        "qa",
+        "ready_for_shipping",
+        "shipped",
+        "delivered",
+        "closed",
+        "cancelled"
+      ],
+      "default": "draft"
+    },
+    "offer_type": {
+      "type": "string",
+      "enum": [
+        "rapid",
+        "economic",
+        "premium"
+      ],
+      "description": "Tipul ofertei alese"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "partial",
+        "paid"
+      ],
+      "default": "pending"
+    },
+    "delivery_address": {
+      "type": "string"
+    },
+    "tracking_number": {
+      "type": "string"
+    },
+    "qa_photos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "client_feedback": {
+      "type": "string"
+    },
+    "client_rating": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "client_name",
+    "client_email",
+    "order_number"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "StockLocation",
+  "type": "object",
+  "properties": {
+    "location_code": {
+      "type": "string",
+      "description": "Cod loca\u021bie (ex: WH1, WH2)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nume depozit"
+    },
+    "city": {
+      "type": "string",
+      "description": "Ora\u0219"
+    },
+    "address": {
+      "type": "string",
+      "description": "Adres\u0103 complet\u0103"
+    },
+    "capacity": {
+      "type": "number",
+      "description": "Capacitate aproximativ\u0103 (buc\u0103\u021bi)"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "location_code",
+    "name"
+  ]
+}

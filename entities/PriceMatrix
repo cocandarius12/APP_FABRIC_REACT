@@ -1,0 +1,56 @@
+{
+  "name": "PriceMatrix",
+  "type": "object",
+  "properties": {
+    "template_id": {
+      "type": "string",
+      "description": "ID template produs"
+    },
+    "personalization_type": {
+      "type": "string",
+      "enum": [
+        "print_dtg",
+        "print_screen",
+        "broderie",
+        "sublimation",
+        "patch",
+        "vinyl"
+      ],
+      "description": "Tip personalizare"
+    },
+    "size_category": {
+      "type": "string",
+      "enum": [
+        "small",
+        "medium",
+        "large",
+        "xlarge"
+      ],
+      "description": "M\u0103rime zon\u0103 personalizare"
+    },
+    "base_price_per_unit": {
+      "type": "number",
+      "description": "Pre\u021b baz\u0103 personalizare per unitate"
+    },
+    "per_color_fee": {
+      "type": "number",
+      "description": "Taxa per culoare adi\u021bional\u0103"
+    },
+    "setup_fee": {
+      "type": "number",
+      "description": "Taxa setup (one-time per design)"
+    },
+    "min_qty_for_discount": {
+      "type": "number",
+      "description": "Cantitate minim\u0103 pentru discount"
+    },
+    "volume_discount_percent": {
+      "type": "number",
+      "description": "Discount volum %"
+    }
+  },
+  "required": [
+    "personalization_type",
+    "base_price_per_unit"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "name": "ProductTemplate",
+  "type": "object",
+  "properties": {
+    "template_id": {
+      "type": "string",
+      "description": "ID template (ex: GILD-5000)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nume produs (ex: Gildan Heavy Cotton T-Shirt 5000)"
+    },
+    "model": {
+      "type": "string",
+      "description": "Model (ex: 5000, 64000)"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Brand (ex: Gildan)",
+      "default": "Gildan"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "tricouri",
+        "hanorace",
+        "polo",
+        "geci",
+        "accesorii",
+        "textile_casa",
+        "fleece",
+        "sweatshirt",
+        "hoodie"
+      ],
+      "description": "Categorie produs"
+    },
+    "subcategory": {
+      "type": "string",
+      "description": "Subcategorie"
+    },
+    "base_cost": {
+      "type": "number",
+      "description": "Cost baz\u0103 per unitate (RON)"
+    },
+    "retail_price": {
+      "type": "number",
+      "description": "Pre\u021b retail recomandat (RON)"
+    },
+    "default_margin_pct": {
+      "type": "number",
+      "description": "Marj\u0103 implicit\u0103 (%)",
+      "default": 40
+    },
+    "manufacturing_cost": {
+      "type": "number",
+      "description": "Cost produc\u021bie per unitate"
+    },
+    "default_lead_time_days": {
+      "type": "number",
+      "description": "Lead time standard (zile)"
+    },
+    "min_qty": {
+      "type": "number",
+      "description": "Cantitate minim\u0103"
+    },
+    "available_colors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Culori disponibile"
+    },
+    "available_sizes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "M\u0103rimi disponibile"
+    },
+    "personalization_options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Op\u021biuni personalizare: print_dtg, screen_print, embroidery, sublimation"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL imagine produs"
+    },
+    "description": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "base_cost"
+  ]
+}

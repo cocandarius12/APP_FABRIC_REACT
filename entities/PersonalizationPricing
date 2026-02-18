@@ -1,0 +1,92 @@
+{
+  "name": "PersonalizationPricing",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "embroidery",
+        "screen_print",
+        "dtg",
+        "dtf",
+        "sublimation",
+        "patch",
+        "transfer"
+      ],
+      "description": "Tip personalizare"
+    },
+    "size_tier": {
+      "type": "string",
+      "enum": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "description": "Categorie m\u0103rime (pentru broderie)"
+    },
+    "digitizing_fee": {
+      "type": "number",
+      "description": "Tax\u0103 digitizare (broderie)",
+      "default": 0
+    },
+    "stitch_rate_per_1000": {
+      "type": "number",
+      "description": "Cost per 1000 stitches (broderie)",
+      "default": 0
+    },
+    "stitch_rate_per_stitch": {
+      "type": "number",
+      "description": "Cost per stitch (broderie)",
+      "default": 0
+    },
+    "per_piece_handling": {
+      "type": "number",
+      "description": "Cost handling per pies\u0103"
+    },
+    "setup_fee_per_color": {
+      "type": "number",
+      "description": "Setup per culoare (screen print)",
+      "default": 0
+    },
+    "price_per_piece_per_color": {
+      "type": "number",
+      "description": "Pre\u021b per pies\u0103 per culoare (screen print)",
+      "default": 0
+    },
+    "price_per_piece": {
+      "type": "number",
+      "description": "Pre\u021b per pies\u0103 (DTG/DTF/sublimation)"
+    },
+    "min_run": {
+      "type": "number",
+      "description": "Cantitate minim\u0103",
+      "default": 1
+    },
+    "max_colors": {
+      "type": "number",
+      "description": "Culori maxime",
+      "default": 999
+    },
+    "rush_multiplier": {
+      "type": "number",
+      "description": "Multiplicator pentru comenzi urgente",
+      "default": 1.0
+    },
+    "min_stitch_count": {
+      "type": "number",
+      "description": "Minim stitches (pentru tier)",
+      "default": 0
+    },
+    "max_stitch_count": {
+      "type": "number",
+      "description": "Maxim stitches (pentru tier)",
+      "default": 999999
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

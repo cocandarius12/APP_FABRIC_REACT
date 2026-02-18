@@ -1,0 +1,62 @@
+{
+  "name": "CompanySettings",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Numele companiei"
+    },
+    "company_address": {
+      "type": "string",
+      "description": "Adresa complet\u0103"
+    },
+    "company_phone": {
+      "type": "string",
+      "description": "Telefon contact"
+    },
+    "company_email": {
+      "type": "string",
+      "description": "Email contact"
+    },
+    "company_website": {
+      "type": "string",
+      "description": "Website companie"
+    },
+    "company_logo_url": {
+      "type": "string",
+      "description": "URL logo companie"
+    },
+    "bank_name": {
+      "type": "string",
+      "description": "Nume banc\u0103"
+    },
+    "bank_iban": {
+      "type": "string",
+      "description": "IBAN"
+    },
+    "bank_swift": {
+      "type": "string",
+      "description": "SWIFT/BIC (optional)"
+    },
+    "cui": {
+      "type": "string",
+      "description": "CUI/CIF"
+    },
+    "reg_com": {
+      "type": "string",
+      "description": "Nr. Reg. Com."
+    },
+    "tva_rate": {
+      "type": "number",
+      "default": 19,
+      "description": "Cota TVA %"
+    },
+    "invoice_notes": {
+      "type": "string",
+      "description": "Not\u0103 standard pe factur\u0103"
+    }
+  },
+  "required": [
+    "company_name"
+  ]
+}

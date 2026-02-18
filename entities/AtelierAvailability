@@ -1,0 +1,29 @@
+{
+  "name": "AtelierAvailability",
+  "type": "object",
+  "properties": {
+    "atelier_id": {
+      "type": "string"
+    },
+    "atelier_name": {
+      "type": "string"
+    },
+    "week_start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "capacity_total": {
+      "type": "number"
+    },
+    "capacity_booked": {
+      "type": "number"
+    },
+    "capacity_available": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "atelier_id",
+    "week_start_date"
+  ]
+}

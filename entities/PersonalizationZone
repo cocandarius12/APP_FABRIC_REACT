@@ -1,0 +1,39 @@
+{
+  "name": "PersonalizationZone",
+  "type": "object",
+  "properties": {
+    "id_zone": {
+      "type": "string",
+      "description": "ID tehnic zon\u0103"
+    },
+    "label_client": {
+      "type": "string",
+      "description": "Nume afi\u0219at c\u0103tre client"
+    },
+    "area_cm2": {
+      "type": "number",
+      "description": "Suprafa\u021b\u0103 \u00een cm\u00b2"
+    },
+    "allowed_techniques": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tehnici permise: DTG, SERIGRAFIE, BRODERIE, SUBLIMARE, VINIL"
+    },
+    "display_order": {
+      "type": "number",
+      "description": "Ordine afi\u0219are \u00een UI"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "id_zone",
+    "label_client",
+    "area_cm2",
+    "allowed_techniques"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "ProductVariant",
+  "type": "object",
+  "properties": {
+    "sku": {
+      "type": "string",
+      "description": "SKU unic (ex: GILD-5000-WHT-M)"
+    },
+    "parent_template_id": {
+      "type": "string",
+      "description": "ID template p\u0103rinte"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Nume complet produs"
+    },
+    "model": {
+      "type": "string",
+      "description": "Model"
+    },
+    "color": {
+      "type": "string",
+      "description": "Culoare"
+    },
+    "size": {
+      "type": "string",
+      "description": "M\u0103rime"
+    },
+    "base_cost_ron": {
+      "type": "number",
+      "description": "Cost achizi\u021bie (RON)"
+    },
+    "retail_price_ron": {
+      "type": "number",
+      "description": "Pre\u021b retail (RON)"
+    },
+    "default_margin_pct": {
+      "type": "number",
+      "description": "Marj\u0103 %"
+    },
+    "stock_qty": {
+      "type": "number",
+      "description": "Cantitate \u00een stoc",
+      "default": 0
+    },
+    "warehouse_location": {
+      "type": "string",
+      "description": "Loca\u021bie depozit (ex: WH1, WH2)"
+    },
+    "reorder_point": {
+      "type": "number",
+      "description": "Punct recomandare (cantitate alert\u0103)",
+      "default": 10
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "sku",
+    "color",
+    "size",
+    "base_cost_ron"
+  ]
+}

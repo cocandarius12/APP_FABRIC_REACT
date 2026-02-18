@@ -1,0 +1,55 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "order_id": {
+      "type": "string",
+      "description": "ID of the order being audited"
+    },
+    "event": {
+      "type": "string",
+      "enum": [
+        "edit_attempt",
+        "edit_failed",
+        "edit_success",
+        "message_sent",
+        "order_locked",
+        "order_unlocked"
+      ],
+      "description": "Type of audit event"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "Email of user who triggered the event"
+    },
+    "message_id": {
+      "type": "string",
+      "description": "ID of the message being edited"
+    },
+    "old_text": {
+      "type": "string",
+      "description": "Original message text (for edits)"
+    },
+    "new_text": {
+      "type": "string",
+      "description": "New message text (for edits)"
+    },
+    "error": {
+      "type": "string",
+      "description": "Error message if operation failed"
+    },
+    "diagnostics": {
+      "type": "object",
+      "description": "Detailed diagnostics for debugging"
+    },
+    "timestamp": {
+      "type": "number",
+      "description": "Unix timestamp in milliseconds"
+    }
+  },
+  "required": [
+    "order_id",
+    "event",
+    "timestamp"
+  ]
+}

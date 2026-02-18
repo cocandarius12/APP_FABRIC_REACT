@@ -1,0 +1,158 @@
+{
+  "name": "Atelier",
+  "type": "object",
+  "properties": {
+    "atelier_id": {
+      "type": "string",
+      "description": "ID unic atelier (ex: AT001)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Numele atelierului"
+    },
+    "city": {
+      "type": "string",
+      "description": "Ora\u0219"
+    },
+    "contact_email": {
+      "type": "string",
+      "description": "Email contact"
+    },
+    "contact_phone": {
+      "type": "string",
+      "description": "Telefon contact"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "print_dtg",
+          "screen_print",
+          "embroidery",
+          "dtf",
+          "sublimation",
+          "cut_sew",
+          "softshell",
+          "patches"
+        ]
+      },
+      "description": "Skill-uri disponibile"
+    },
+    "price_modifier": {
+      "type": "number",
+      "description": "Modificator pre\u021b global (0.9 = -10%, 1.1 = +10%)",
+      "default": 1.0
+    },
+    "weekly_capacity": {
+      "type": "number",
+      "description": "Capacitate s\u0103pt\u0103m\u00e2nal\u0103 (unit\u0103\u021bi)"
+    },
+    "avg_lead_time_days": {
+      "type": "number",
+      "description": "Lead time mediu \u00een zile"
+    },
+    "error_rate_pct": {
+      "type": "number",
+      "description": "Rat\u0103 eroare istoric\u0103 (%)",
+      "default": 0
+    },
+    "min_order_qty": {
+      "type": "number",
+      "description": "Cantitate minim\u0103 comand\u0103",
+      "default": 1
+    },
+    "base_markup_pct": {
+      "type": "number",
+      "description": "Marj\u0103 baz\u0103 la cost intern (%)",
+      "default": 15
+    },
+    "current_load_percent": {
+      "type": "number",
+      "description": "\u00cenc\u0103rcare curent\u0103 %",
+      "default": 0
+    },
+    "personalization_techniques": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "technique": {
+            "type": "string",
+            "enum": [
+              "DTG",
+              "SERIGRAFIE",
+              "BRODERIE",
+              "SUBLIMARE",
+              "VINIL",
+              "DTF",
+              "PATCHES"
+            ]
+          },
+          "cost_per_cm2": {
+            "type": "number",
+            "description": "Cost per cm\u00b2"
+          },
+          "min_cost_per_piece": {
+            "type": "number",
+            "description": "Cost minim garantat per pies\u0103"
+          },
+          "setup_fee": {
+            "type": "number",
+            "description": "Tax\u0103 setup per comand\u0103"
+          },
+          "min_qty": {
+            "type": "number",
+            "description": "Cantitate minim\u0103 acceptat\u0103"
+          },
+          "max_area_cm2": {
+            "type": "number",
+            "description": "Arie maxim\u0103 personalizare"
+          },
+          "lead_time_modifier_days": {
+            "type": "number",
+            "description": "Modificator timp de livrare"
+          },
+          "price_modifier": {
+            "type": "number",
+            "description": "Modificator pre\u021b pentru aceast\u0103 tehnic\u0103"
+          }
+        },
+        "required": [
+          "technique",
+          "cost_per_cm2",
+          "min_cost_per_piece",
+          "setup_fee",
+          "min_qty",
+          "max_area_cm2"
+        ]
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "pending"
+      ],
+      "default": "active"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "invoice_series": {
+      "type": "string",
+      "description": "Serie factur\u0103 (3 litere)",
+      "maxLength": 3
+    },
+    "county_code": {
+      "type": "string",
+      "description": "Cod jude\u021b (2 litere)",
+      "maxLength": 2
+    }
+  },
+  "required": [
+    "name",
+    "city"
+  ]
+}
